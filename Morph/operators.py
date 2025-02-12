@@ -1,3 +1,4 @@
+import numpy
 import skimage
 
 
@@ -15,3 +16,8 @@ def opening(image, element=None):
 
 def closing(image, element=None):
     return skimage.morphology.closing(image, element)
+
+
+def geodesic_erosion(marker_image, mask_image, element=None):
+    image = erosion(marker_image, element)
+    return numpy.maximum(mask_image, image)
