@@ -7,3 +7,7 @@ def erosion(image, element=None):
 
 def dilation(image, element=None):
     return skimage.morphology.dilation(image, element)
+
+
+def opening(image, element=None):
+    return skimage.morphology.opening(image, element)

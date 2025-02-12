@@ -1,6 +1,6 @@
 [project]
 name = "morph"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
-  "scikit-image==0.22.0"
+  "scikit-image==0.25.1"
 ]
