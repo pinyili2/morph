@@ -11,3 +11,7 @@ def dilation(image, element=None):
 
 def opening(image, element=None):
     return skimage.morphology.opening(image, element)
+
+
+def closing(image, element=None):
+    return skimage.morphology.closing(image, element)
