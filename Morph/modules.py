@@ -20,3 +20,19 @@ class Mapper:
 
     def custom(self, data, mapper, *args):
         return mapper(data, *args)
+
+
+class Counter:
+    def naive(self, data, G):
+        G = G & set(data['g'])
+        image = {}
+        X = max(data['x'])
+        Y = max(data['y'])
+        shape = (X + 1, Y + 1)
+        for g in G:
+            image[g] = numpy.zeros(shape, int)
+        for g, x, y in zip(data['g'], data['x'], data['y']):
+            if g in G:
+                image[g][x, y] = 1
+                G.remove(g)
+        return image
