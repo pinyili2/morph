@@ -127,3 +127,6 @@ class AlgebraicFilter:
 class Labeler:
     def naive(self, image):
         return image
+
+    def blob(self, image, element):
+        return Morph.operators.labeling(image, element)
