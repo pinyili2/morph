@@ -1,4 +1,5 @@
 import numpy
+import skimage
 
 import Morph.operators
 
@@ -26,6 +27,10 @@ def _count(data, G, method):
 def _point_wise_maximum(image):
     array = [image[i] for i in image]
     return numpy.maximum.reduce(array)
+
+
+def _area_opening(image, area_threshold):
+    return skimage.morphology.area_opening(image, area_threshold)
 
 
 class Mapper:
@@ -104,3 +109,6 @@ class Thresholder:
 class AlgebraicFilter:
     def naive(self, image):
         return image
+
+    def area_opening(self, image, lambda_):
+        return _area_opening(image, lambda_)
