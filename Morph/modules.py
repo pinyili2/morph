@@ -33,6 +33,10 @@ def _area_opening(image, area_threshold):
     return skimage.morphology.area_opening(image, area_threshold)
 
 
+def _area_closing(image, area_threshold):
+    return skimage.morphology.area_closing(image, area_threshold)
+
+
 class Mapper:
     def naive(self, data):
         return data
@@ -112,3 +116,6 @@ class AlgebraicFilter:
 
     def area_opening(self, image, lambda_):
         return _area_opening(image, lambda_)
+
+    def area_closing(self, image, lambda_):
+        return _area_closing(image, lambda_)
